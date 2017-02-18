@@ -24,6 +24,25 @@
 					title : 'Administration Dashboard'
 				});
 
+				function redirectWhenLoggedOut($q, $injector) {
+        return {
+            'responseError': function (rejection) {
+                var $state = $injector.get('$state');
+                var rejectionReasons = ['token_not_provided', 'token_expired', 'token_absent', 'token_invalid','could_not_create_token'];
+                angular.forEach(rejectionReasons, function (value, key) {
+                    if (rejection.data.error === value || rejection.status === 401) {
+                        localStorage.removeItem('user');
+                        $state.go('login');
+                    }
+                });
+                return $q.reject(rejection);
+            }
+        }
+    }
+    $provide.factory('unauthorisedInterceptor', redirectWhenLoggedOut);
+    // Push the new factory onto the $http interceptor array
+    $httpProvider.interceptors.push('unauthorisedInterceptor');
+
 
 
 		}]);
@@ -34,11 +53,12 @@
       // $stateChangeStart is fired whenever the state changes. We can use some parameters
       // such as toState to hook into details about the state as it is changing
       $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
-
+					if(toState.name !== "login") {
+						$http.get('/api/authenticate').error(function(data){});
+					}
           $rootScope.loading = true;
           // Grab the user from local storage and parse it to an object
           var user = JSON.parse(localStorage.getItem('user'));
-
           // If there is any user data in local storage then the user is quite
           // likely authenticated. If their token is expired, or if they are
           // otherwise not actually authenticated, they will be redirected to

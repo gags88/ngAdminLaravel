@@ -21,6 +21,9 @@ The Scotch branch has all the code that is covered in the first part of the tuto
 
 ### Changes:
 
-* Dynamic Title
-* Angular Material Design
+* Dynamic Title.
+* Angular Material Design.
+* html5Mode in Angular to have clean URLs i.e. without #/ .
+* Separate JS Files combined with gulp to make development easy.
+* Restriced Pages are not accessible with help of http interceptor
 * More stuff is under progress....
