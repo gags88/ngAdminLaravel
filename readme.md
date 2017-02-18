@@ -11,6 +11,7 @@ Clone the repository and install the Laravel vendor files
 Once your .env file is setup with your database connection parameters, run the migrations and seed the database
 
 	php artisan migrate
+	php artisan make:seeder UsersTableSeeder (If UsersTableSeeder is not found in database/seeds)
 	php artisan db:seed
 
 
