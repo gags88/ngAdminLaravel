@@ -1,0 +1,32 @@
+<section class="margin-auto">
+	<div>
+		<div role="alert" class="alert alert-danger" ng-if="loginError"><i class="material-icons">error</i> {{loginErrorText}}</div>
+		<md-card md-whiteframe="4" class="card-layout  margin0">
+				<md-card-content layout-padding>
+					<div class="header-icon">
+						<i class="material-icons">account_circle</i>
+						<div class="header">
+								Administration
+						</div>
+					</div>
+      		<form name="loginForm" autocomplete="off" novalidate>
+      			<md-input-container class="md-block">
+  					<label for="email">Username</label>
+  					<input type="text" name="email" required="required" ng-model="auth.email" md-no-asterisk/>
+  					<div ng-messages="loginForm.email.$error" role="alert">
+  						<div ng-message="required">Username is required</div>
+  					</div>
+      			</md-input-container>
+      			<md-input-container class="md-block">
+      				<label for="password">Password</label>
+  					<input type="password" name="password" required="required" ng-model="auth.password" md-no-asterisk/>
+  					<div ng-messages="loginForm.password.$error" role="alert">
+  						<div ng-message="required">Password can not be blank</div>
+  					</div>
+      			</md-input-container>
+    				<md-button type="submit" class="md-primary md-raised" ng-disabled="!loginForm.$valid" ng-click="auth.login()">Login</md-button>
+ 					</form>
+      	</md-card-content>
+		</md-card>
+	</div>
+</section>

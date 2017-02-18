@@ -1,0 +1,41 @@
+<div ng-controller="topNavController as topNav">
+  <md-content>
+    <md-toolbar class="md-hue-8">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" hide-gt-sm aria-label="Show List">
+          <i class="material-icons">more_vert</i>
+        </md-button>
+
+        <h2 flex md-truncate>Administration</h2>
+        <md-menu md-position-mode="target-right target">
+          <md-button aria-label="Open Menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+            <i class="material-icons" md-menu-origin>account_circle</i>
+          </md-button>
+          <md-menu-content width="4">
+            <md-menu-item>
+              <span ng-if="authenticated">Welcome, {{currentUser.name}}</span>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <md-menu-item>
+              <md-button ng-click="ctrl.menuItemClick($index)" class="with-icon">
+                <div layout="row">
+                   <p flex><i class="material-icons">perm_identity</i> Profile</p>
+                </div>
+             </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="ctrl.menuItemClick($index)" class="with-icon">
+                <div layout="row">
+                   <p flex><i class="material-icons">shopping_cart</i> Orders</p>
+                </div>
+             </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+        <md-button ng-click="topNav.logout()" class="md-icon-button">
+          <i class="material-icons">power_settings_new</i>
+        </md-button>
+      </div>
+    </md-toolbar>
+  </md-content>
+</div>
