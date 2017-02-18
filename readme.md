@@ -17,4 +17,10 @@ Once your .env file is setup with your database connection parameters, run the m
 
 ### Branches
 
-The Scotch branch has all the code that is covered in the first part of the tutorial on [Scotch.io](https://scotch.io/token-based-authentication-for-angularjs-and-laravel-apps).
+The Scotch branch has all the code that is covered in the first part of the tutorial on [Scotch.io](https://scotch.io/tutorials/token-based-authentication-for-angularjs-and-laravel-apps).
+
+### Changes:
+
+* Dynamic Title
+* Angular Material Design
+* More stuff is under progress....
