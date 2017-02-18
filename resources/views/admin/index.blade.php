@@ -19,9 +19,9 @@
           </div>
         </div>
         <div ng-show="!loading" flex layout="column">
-          <div ng-include="'../views/admin/topNav/topnav.html'" ng-if="$state.current.name !== 'login'"></div>
+          <div ng-include="'../views/admin/topNav/topnav.html'" ng-if="$state.current.name != 'login'"></div>
           <section layout flex>
-            <section ng-if="$state.current.name !== 'login'" layout>
+            <section ng-if="$state.current.name != 'login'" layout>
               <div ng-include="'../views/admin/sidenav/sidenav.html'" layout></div>
             </section>
             <div id="page-wrapper" flex>

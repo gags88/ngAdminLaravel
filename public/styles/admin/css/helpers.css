@@ -4,3 +4,6 @@
 .margin-auto{
   margin: auto
 }
+.ng-hide{
+  display: none;
+}

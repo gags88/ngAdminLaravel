@@ -83,7 +83,7 @@
               }
           }
       });
-      $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+      $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
         //console.log("state change -> From state: " + fromState.name + " To state: " + toState.name);
         $rootScope.loading = false;
       });
