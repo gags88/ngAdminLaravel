@@ -1,17 +1,44 @@
-<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
-  <md-content layout-padding>
-    <md-button ng-click="close()" class="md-primary" hide-gt-md>
-      Close Sidenav Left
-    </md-button>
-    <p>
-      <md-list>
-        <md-item ng-repeat="it in $ctrl.users">
-          <md-button ng-click="$ctrl.selectUser(it)" ng-class="{'selected' : it === $ctrl.selected }">
-            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-            {{it.name}}
-          </md-button>
-        </md-item>
-      </md-list>
-    </p>
+<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z3" md-component-id="left" >
+  <span ng-controller="sideNavController as sideNav">
+  <md-toolbar class="md-small" layout layout-padding hide-gt-sm>
+      <span>Navigation</span>
+      <span flex></span>
+      <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="sideNav.closeMenu()">
+        <md-tooltip>Close Side Panel</md-tooltip>
+        <i class="material-icons">&#xE5CD;</i>
+      </md-button>
+  </md-toolbar>
+  <md-content flex class="sidebar">
+    <md-list>
+      <md-subheader class="md-no-sticky">Users</md-subheader>
+      <md-list-item ng-click="sideNav.toggle()">
+        <md-icon class="md-default-theme" class="material-icons">&#xE7FD;</md-icon>
+        <p>Users</p>
+        <div class="md-secondary"><span aria-hidden="true" class="md-toggle-icon" ng-class="{{isOpen()}}"><i class="material-icons">&#xE315;</i></span></div>
+      </md-list-item>
+      <md-list-item>
+        <md-icon class="md-default-theme" class="material-icons">&#xE878;</md-icon>
+        <p>Events</p>
+        <md-icon class="md-secondary">2</md-icon>
+      </md-list-item>
+      <md-list-item>
+        <md-icon class="md-default-theme" class="material-icons">&#xE251;</md-icon>
+        <p>Photos</p>
+        <md-icon class="md-secondary">2</md-icon>
+      </md-list-item>
+      <md-divider></md-divider>
+      <md-subheader class="md-no-sticky">Pages</md-subheader>
+      <md-list-item>
+        <md-icon class="md-default-theme" class="material-icons">&#xE7F9;</md-icon>
+        <p>Pages Feed</p>
+        <div class="md-secondary">2</div>
+      </md-list-item>
+      <md-list-item>
+        <md-icon class="md-default-theme" class="material-icons">&#xE1BC;</md-icon>
+        <p>Like Pages</p>
+        <div class="md-secondary">20+</div>
+      </md-list-item>
+   </md-list>
   </md-content>
+</span>
 </md-sidenav>

@@ -163,9 +163,35 @@
 
 (function() {
 	'use strict';
+	angular.module('adminApp').controller('sideNavController', sideNavController);
+
+    function sideNavController($auth, $state, $http, $rootScope, $scope, $mdSidenav) {
+      var vm = this;
+      vm.isOpen = isOpen;
+      vm.toggleOpen = toggleOpen;
+      vm.closeMenu = closeMenu;
+
+      function closeMenu() {
+				$mdSidenav('left').close();
+			};
+
+      function isOpen(){
+
+      };
+
+      function toggleOpen(){
+
+      };
+
+    }
+
+})();
+
+(function() {
+	'use strict';
 	angular.module('adminApp').controller('topNavController', topNavController);
 
-    function topNavController($auth, $state, $http, $rootScope, $scope) {
+    function topNavController($auth, $state, $http, $rootScope, $scope, $mdSidenav) {
       var vm = this;
       vm.logout = function() {
           $auth.logout().then(function() {
@@ -176,9 +202,15 @@
               $rootScope.authenticated = false;
               // Remove the current user info from rootscope
               $rootScope.currentUser = null;
-              $state.go('login'); 
+              $state.go('login');
           });
       }
+			vm.openMenu = function() {
+				$mdSidenav('left').open();
+			};
+			vm.closeMenu = function() {
+				$mdSidenav('left').close();
+			};
     }
 
 })();
