@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	var admin = angular.module('adminApp', ['ui.router', 'satellizer','ngResource','ngMaterial','ngAnimate','ngMessages', 'ngStorage','md.data.table']);
+	var admin = angular.module('adminApp', ['ui.router', 'satellizer','ngResource','ngMaterial','ngAnimate','ngMessages', 'ngStorage','md.data.table','app.directives']);
 
   admin.config(['$mdThemingProvider', '$httpProvider', '$stateProvider', '$urlRouterProvider', '$authProvider', '$provide', '$locationProvider', function($mdThemingProvider, $httpProvider, $stateProvider, $urlRouterProvider, $authProvider, $provide, $locationProvider) {
 			// Satellizer configuration that specifies which API
@@ -94,6 +94,16 @@
   }]);
 
 })();
+
+var directivesApp = angular.module('app.directives',[]);
+
+directivesApp.directive("thekodePreloader", function(){
+  return{
+    restrict : 'AEC',
+		replace : true,
+    template : '<div flex ng-show="loading" class="loading"><div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></div>'
+  }
+});
 
 (function() {
 

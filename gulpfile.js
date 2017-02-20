@@ -21,7 +21,7 @@ var angularPlugins = ['angular/angular.min.js', 'angular/angular-route.min.js','
 
 var cssAdminPlugins = ['angular/angular-material.min.css','angular/md-datatable.css', 'admin/css/admin.css','admin/css/helpers.css'];
 
-var appScripts = ['scripts/admin/js/config.js','views/admin/**/*.js'];
+var appScripts = ['scripts/admin/js/config.js','scripts/admin/js/directives.js','views/admin/**/*.js'];
 
 elixir(mix => {
    /*mix.sass('app.scss')

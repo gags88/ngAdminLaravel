@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	var admin = angular.module('adminApp', ['ui.router', 'satellizer','ngResource','ngMaterial','ngAnimate','ngMessages', 'ngStorage','md.data.table']);
+	var admin = angular.module('adminApp', ['ui.router', 'satellizer','ngResource','ngMaterial','ngAnimate','ngMessages', 'ngStorage','md.data.table','app.directives']);
 
   admin.config(['$mdThemingProvider', '$httpProvider', '$stateProvider', '$urlRouterProvider', '$authProvider', '$provide', '$locationProvider', function($mdThemingProvider, $httpProvider, $stateProvider, $urlRouterProvider, $authProvider, $provide, $locationProvider) {
 			// Satellizer configuration that specifies which API

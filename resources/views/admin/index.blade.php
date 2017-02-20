@@ -12,12 +12,6 @@
         <link rel="stylesheet" href="/styles/css/adminapp.css">
     </head>
     <body layout="column">
-        <div flex ng-show="loading" class="loading">
-          <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-          </div>
-        </div>
         <div ng-show="!loading" flex layout="column">
           <div ng-include="'../views/admin/topNav/topnav.html'" ng-if="$state.current.name != 'login'"></div>
           <section layout flex>
@@ -29,6 +23,7 @@
             </div>
           </section>
         </div>
+        <thekode-Preloader/>
     </body>
     <!-- Application Dependencies -->
     <script src="/scripts/js/angular.js"></script>
