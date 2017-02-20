@@ -17,9 +17,9 @@ var elixir = require('laravel-elixir');
  npm install gulp gulp-uglify
  gulp --prodution - to minify
  */
-var angularPlugins = ['angular/angular.min.js', 'angular/angular-route.min.js','angular/angular-animate.min.js','angular/angular-aria.min.js','angular/angular-messages.min.js','angular/angular-material.min.js','angular/ngStorage.js','angular/angular-resource.js','angular/angular-ui-router.min.js','angular/satellizer.js'];
+var angularPlugins = ['angular/angular.min.js', 'angular/angular-route.min.js','angular/angular-animate.min.js','angular/angular-aria.min.js','angular/angular-messages.min.js','angular/angular-material.min.js','angular/ngStorage.js','angular/angular-resource.js','angular/angular-ui-router.min.js','angular/satellizer.js', 'angular/md-datatable.js'];
 
-var cssAdminPlugins = ['angular/angular-material.min.css', 'admin/css/admin.css','admin/css/helpers.css'];
+var cssAdminPlugins = ['angular/angular-material.min.css','angular/md-datatable.css', 'admin/css/admin.css','admin/css/helpers.css'];
 
 var appScripts = ['scripts/admin/js/config.js','views/admin/**/*.js'];
 

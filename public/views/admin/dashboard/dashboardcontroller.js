@@ -4,8 +4,8 @@
 
 	angular
 		.module('adminApp')
-		.controller('UserController', UserController);
-	function UserController($http) {
+		.controller('DashboardController', DashboardController);
+	function DashboardController($http) {
 		var vm = this;
 		vm.users;
 		vm.error;

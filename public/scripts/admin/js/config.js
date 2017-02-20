@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	var admin = angular.module('adminApp', ['ui.router', 'satellizer','ngResource','ngMaterial','ngAnimate','ngMessages', 'ngStorage']);
+	var admin = angular.module('adminApp', ['ui.router', 'satellizer','ngResource','ngMaterial','ngAnimate','ngMessages', 'ngStorage','md.data.table']);
 
   admin.config(['$mdThemingProvider', '$httpProvider', '$stateProvider', '$urlRouterProvider', '$authProvider', '$provide', '$locationProvider', function($mdThemingProvider, $httpProvider, $stateProvider, $urlRouterProvider, $authProvider, $provide, $locationProvider) {
 			// Satellizer configuration that specifies which API
@@ -15,13 +15,19 @@
 					url: '/login',
 					templateUrl: '../views/admin/login/authView.html',
 					controller: 'AuthController as auth',
-					title : 'Administration Login'
+					title : 'Administration | Login'
 				})
 				.state('dashboard', {
 					url: '/dashboard',
 					templateUrl: '../views/admin/dashboard/dashboard.html',
+					controller: 'DashboardController as dashboard',
+					title : 'Administration | Dashboard'
+				})
+				.state('users', {
+					url: '/users',
+					templateUrl: '../views/admin/users/list-users.html',
 					controller: 'UserController as user',
-					title : 'Administration Dashboard'
+					title : 'Administration | Users'
 				});
 
 				function redirectWhenLoggedOut($q, $injector) {
@@ -42,8 +48,6 @@
     $provide.factory('unauthorisedInterceptor', redirectWhenLoggedOut);
     // Push the new factory onto the $http interceptor array
     $httpProvider.interceptors.push('unauthorisedInterceptor');
-
-
 
 		}]);
   //Update Title and State
