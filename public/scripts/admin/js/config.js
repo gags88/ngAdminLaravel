@@ -3,6 +3,20 @@
 	var admin = angular.module('adminApp', ['ui.router', 'satellizer','ngResource','ngMaterial','ngAnimate','ngMessages', 'ngStorage','md.data.table','app.directives']);
 
   admin.config(['$mdThemingProvider', '$httpProvider', '$stateProvider', '$urlRouterProvider', '$authProvider', '$provide', '$locationProvider', function($mdThemingProvider, $httpProvider, $stateProvider, $urlRouterProvider, $authProvider, $provide, $locationProvider) {
+
+			$mdThemingProvider.theme('default')
+				.primaryPalette('indigo', {
+					'default': '600',
+					'hue-1': '100',
+					'hue-2': '600',
+					'hue-3': 'A100'
+				})
+				// If you specify less than all of the keys, it will inherit from the
+				// default shades
+				.accentPalette('indigo', {
+					'default': '900'
+			});
+
 			// Satellizer configuration that specifies which API
 			// route the JWT should be retrieved from
 			$authProvider.loginUrl = '/api/authenticate';

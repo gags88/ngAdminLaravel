@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::group(['prefix' => 'api'], function(){
+Route::group(['prefix' => 'api', 'namespace' => 'Admin'], function(){
     Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
     Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
@@ -22,6 +22,10 @@ Route::group(['prefix' => 'admin'], function (){
 	Route::any('{path?}', function(){
         return view("admin.index");
     })->where("path", ".+");
+});
+
+Route::get('/', function() {
+    return view("welcome");
 });
 
 // Using different syntax for Blade to avoid conflicts with Jade.

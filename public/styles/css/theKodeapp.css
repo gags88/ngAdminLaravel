@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'code_pro_regular';
+    src: url('../../fonts/code_pro/Code_Pro_Demo-webfont.eot');
+    src: url('../../fonts/code_pro/Code_Pro_Demo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/code_pro/Code_Pro_Demo-webfont.woff2') format('woff2'),
+         url('../../fonts/code_pro/Code_Pro_Demo-webfont.woff') format('woff'),
+         url('../../fonts/code_pro/Code_Pro_Demo-webfont.ttf') format('truetype'),
+         url('../../fonts/code_pro/Code_Pro_Demo-webfont.svg#code_pro_demoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Catamaran_r';
+    src: url('../../fonts/Catamaran/Catamaran-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-weight: 100;
+    font-family: 'Catamaran_r';
+}
+.quote{
+  color: #333;
+  font-size: 26px
+}
+.img-responsive{
+  max-width: 100%;
+}
+.logo img{
+  position: relative;
+  top: 5px;
+}
