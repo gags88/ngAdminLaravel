@@ -1,5 +1,4 @@
 var elixir = require('laravel-elixir');
-
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -24,14 +23,12 @@ var cssAdminPlugins = ['angular/angular-material.min.css','angular/md-datatable.
 var appScripts = ['scripts/admin/js/config.js','scripts/admin/js/directives.js','views/admin/**/*.js'];
 
 elixir(mix => {
-   /*mix.sass('app.scss')
+    /*mix.sass('app.scss')
       .webpack('app.js');*/
      mix.styles(cssAdminPlugins,'public/styles/css/adminapp.css','public/styles/');
      mix.scripts(angularPlugins,'public/scripts/js/angular.js','public/scripts');
      mix.scripts(appScripts,'public/scripts/js/adminapp.js','public');
-
 });
-
 /*
 gulp.task('scripts-watch',function() {
  gulp.watch('views/admin/**//*.js', [appScripts]);

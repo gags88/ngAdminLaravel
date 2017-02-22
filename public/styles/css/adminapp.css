@@ -90,6 +90,8 @@ button.with-icon i{top:7px; position: relative;right: 5px}
 }
 md-sidenav .sidebar i{position:relative;top: 5px;right: 5px}
 .nav h2,.nav i{color: #fff}
+.logo{height: 20px;position: relative; top: 2px}
+.md-list-item-inner .material-icons{position: relative; top: -3px}
 
 .margin0{
   margin: 0;

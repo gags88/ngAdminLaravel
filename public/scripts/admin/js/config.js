@@ -5,8 +5,8 @@
   admin.config(['$mdThemingProvider', '$httpProvider', '$stateProvider', '$urlRouterProvider', '$authProvider', '$provide', '$locationProvider', function($mdThemingProvider, $httpProvider, $stateProvider, $urlRouterProvider, $authProvider, $provide, $locationProvider) {
 
 			$mdThemingProvider.theme('default')
-				.primaryPalette('indigo', {
-					'default': '600',
+				.primaryPalette('blue', {
+					'default': '700',
 					'hue-1': '100',
 					'hue-2': '600',
 					'hue-3': 'A100'
@@ -42,6 +42,12 @@
 					templateUrl: '../views/admin/users/list-users.html',
 					controller: 'UserController as user',
 					title : 'Administration | Users'
+				})
+				.state('clientlogins', {
+					url: '/clogins',
+					templateUrl: '../views/admin/clients/client-users.html',
+					controller: 'ClientLoginsController as client',
+					title : 'Administration | Client Logins'
 				});
 
 				function redirectWhenLoggedOut($q, $injector) {

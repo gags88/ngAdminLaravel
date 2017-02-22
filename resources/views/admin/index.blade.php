@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <base href="/admin/" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="shortcut icon" type="image/x-icon" href="/" />
+        <link rel="shortcut icon" type="image/x-icon" href="/images/logo/favico.png" />
         <base href="/">
         <title ng-bind="$state.current.title"></title>
         <link rel="stylesheet" href="/styles/css/adminapp.css">

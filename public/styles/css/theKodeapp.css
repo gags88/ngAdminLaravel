@@ -16,14 +16,6 @@
     font-style: normal;
 }
 html, body {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    font-weight: 100;
     font-family: 'Catamaran_r';
 }
 .quote{
@@ -36,4 +28,5 @@ body {
 .logo img{
   position: relative;
   top: 5px;
+  height: 20px;
 }
