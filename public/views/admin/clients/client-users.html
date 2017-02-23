@@ -1,6 +1,49 @@
 <md-card flex layout-padding>
-  <h3>Add New Client Login</h3>
-  <md-table-container>
-
-</md-table-container>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline">Add New Client Login</span>
+      <span class="md-subhead">Manage Logins</span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-content>
+    <form name="clientLoginForm" autocomplete="off" novalidate="novalidate">
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label for="cname">Client Name</label>
+          <input type="text" name="cname" required="required" ng-model="client.name" />
+          <div ng-messages="clientLoginForm.cname.$error" role="alert">
+            <div ng-message="required">Client Name is required</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label for="cip">Client IP</label>
+          <input type="text" name="cip" required="required" ng-model="client.ip" ng-pattern="/^(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.(\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))$/" />
+          <div ng-messages="clientLoginForm.cip.$error" role="alert">
+            <div ng-message="required">Client IP is required</div>
+            <div ng-message="pattern">That doesn't look like a valid IP address.
+            </div>
+          </div>
+        </md-input-container>
+      </div>
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label for="cusername">Username</label>
+          <input type="text" name="cusername" required="required" ng-model="client.username"/>
+          <div ng-messages="clientLoginForm.cusername.$error" role="alert">
+            <div ng-message="required">Client Username is required</div>
+          </div>
+        </md-input-container>
+      </div>
+      <div layout-gt-sm="row">
+        <md-input-container class="md-block" flex-gt-sm>
+          <label for="password">Password</label>
+          <input type="text" name="password" required="required" ng-model="client.password"/>
+          <div ng-messages="clientLoginForm.password.$error" role="alert">
+            <div ng-message="required">Client Password is required</div>
+          </div>
+        </md-input-container>
+      </div>
+      <md-button type="submit" class="md-primary md-raised" ng-disabled="!clientLoginForm.$valid" ng-click="client.add()">Submit</md-button>
+    </form>
+  </md-card-content>
 </md-card>

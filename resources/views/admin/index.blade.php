@@ -19,7 +19,7 @@
               <div ng-include="'../views/admin/sidenav/sidenav.html'" layout></div>
             </section>
             <div id="page-wrapper" flex>
-                <div ui-view id="ui-view" layout flex></div>
+                <div ui-view id="ui-view" flex></div>
             </div>
           </section>
         </div>

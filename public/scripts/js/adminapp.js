@@ -127,39 +127,37 @@ directivesApp.directive("thekodePreloader", function(){
 
 (function() {
 	'use strict';
+
 	angular.module('adminApp').controller('ClientLoginsController', ClientLoginsController);
 
-  function ClientLoginsController() {
+  function ClientLoginsController($http) {
 
-  }
-
-})();
-
-(function() {
-
-	'use strict';
-
-	angular
-		.module('adminApp')
-		.controller('DashboardController', DashboardController);
-	function DashboardController($http) {
 		var vm = this;
-		vm.users;
-		vm.error;
-		vm.getUsers = function() {
-			// This request will hit the index method in the AuthenticateController
-			// on the Laravel side and will return the list of users
-			$http.get('/api/authenticate').success(function(response) {
-					vm.users = response.users;
+
+		vm.add = function(){
+
+			var data = {
+          name: vm.name,
+          ip: vm.ip,
+					username: vm.username,
+					password: vm.password
+      };
+
+			var config = {
+          headers : {
+              'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+          }
+      }
+
+			$http.post('/api/addClient', vm, config).success(function(response) {
+					//vm.users = response.users;
 			}).error(function(error) {
 					vm.error = error;
-					function sendback(){
-					  window.location = 'login';
-					}
-					setTimeout(sendback, 1000);
+
 			});
 		}
-	}
+
+  }
 
 })();
 
@@ -228,6 +226,34 @@ directivesApp.directive("thekodePreloader", function(){
       };
 
     }
+
+})();
+
+(function() {
+
+	'use strict';
+
+	angular
+		.module('adminApp')
+		.controller('DashboardController', DashboardController);
+	function DashboardController($http) {
+		var vm = this;
+		vm.users;
+		vm.error;
+		vm.getUsers = function() {
+			// This request will hit the index method in the AuthenticateController
+			// on the Laravel side and will return the list of users
+			$http.get('/api/authenticate').success(function(response) {
+					vm.users = response.users;
+			}).error(function(error) {
+					vm.error = error;
+					function sendback(){
+					  window.location = 'login';
+					}
+					setTimeout(sendback, 1000);
+			});
+		}
+	}
 
 })();
 
